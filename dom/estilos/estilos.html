@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      #app {
+        display: flex;
+        justify-content: space-around;
+      }
+      .demo {
+        width: 100px;
+        height: 100px;
+        background-color: grey;
+      }
+      .c1 {
+        background-color: blueviolet;
+    }
+    .c2{
+        background-color: chartreuse;
+    }
+    .c3{
+        background-color: red;
+    }
+    </style>
+  </head>
+  <body>
+
+      <!--Ao criar a instância no Vue.js com um estilo criado, posso adicionar eventos que irão modificar o
+    elemento ao fazer um bind chamando pela classe ou id que eu quero alterar.
+                    
+                        ex <span class="container" 
+                        :class= {estilo: aplicarEstilo } 
+                        @click="aplicarEstilo = !aplicarEstilo"></span>
+                    
+                        vue -> 
+
+                        new Vue({
+                            ...
+                            data: {
+                                aplicarEstilo: true
+                            }
+                            ...
+                        })
+                    -->
+    <div id="app"> 
+      <div 
+      class="demo" 
+      :class="{c1: insertC1}" 
+      @click="insertC1 = !insertC1" >
+    
+    </div>
+      <div class="demo"></div>
+      <div class="demo"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+    <script>
+        new Vue({
+            el:'#app',
+            data: {
+                insertC1: false
+            }
+        })
+    </script>
+  </body>
+</html>

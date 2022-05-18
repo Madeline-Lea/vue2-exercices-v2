@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>propriedades reativas</title>
+  </head>
+  <body>
+    <div id="app">
+        <p>Contador: {{ count }} | {{ count2 }}</p>
+        <p>Resultado: {{ res }}</p>
+
+        <button v-on:click="counting()">Conta +1</button>
+        <button v-on:click="count2++">Conta2 +1</button>
+        <button v-on:click="countingDecrease()">Conta - 1</button>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          count: 0,
+          count2: 0
+        },
+        computed: {
+          res: function (){
+            console.log('calling method')
+            return this.count >= 5 ? "Maior do que cinco... " : "Menor do que cinco..."
+          }
+        },
+        methods: {
+          counting: function (){
+            this.count++;
+          }, 
+          countingDecrease: function (){
+            this.count--;
+          },
+          // res: function (){
+          //   return this.count >= 5 ? "Maior do que cinco... " : "Menor do que cinco..."
+          // }
+        }
+      })
+    </script>
+    
+  </body>
+</html>

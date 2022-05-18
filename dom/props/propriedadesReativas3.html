@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <p>Contador: {{ count }} {{ count2 }}</p>
+      <p>Resultado: {{ res }}</p>
+
+      <button @click="counting">Add 1</button>
+      <button v-on:click="count2++">Add 1 on count2</button>
+      <button v-on:click="decrease">Decrease</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          count: 0,
+          count2: 0,
+        },
+        methods: {
+          counting: function () {
+            this.count++;
+          },
+          decrease: function () {
+            this.count--;
+            this.count2--;
+          },
+          //   res: function () {
+          //     return this.count >= 5
+          //       ? "Maior ou igual a 5"
+          //       : "Menor ou igual a 5";
+          //   },
+        },
+        computed: {
+          res: function () {
+            return this.count >= 5
+              ? "Maior ou igual a 5"
+              : "Menor ou igual a 5";
+          },
+        },
+        watch: {
+          count(newbie, old) {
+            console.log(newbie, old);
+            const callingThis = this;
+            setTimeout(function () {
+              callingThis.count = 0;
+              callingThis.count2 = 0;
+            }, 3000);
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

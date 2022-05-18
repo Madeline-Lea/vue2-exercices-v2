@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula</title>
+</head>
+<body>
+    
+    <div id="app">
+        <p>{{title}}</p>
+    </div>
+
+    <!--Aula 01 de Introdução ao Vue2.-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+    <script>
+        /* O código a seguir demonstra como funciona a chamada do VUE para podermos ter acesso
+        em suas ferramentas que podem nos ajudar de diversas formas, a linha de código escrita 
+        tem o seguinte o proposito: 
+            Criei uma função na base contrutora ECMAScript 2015, e então fiz um objeto que 
+        fará de fato a execução do Vue.js.
+            Ao criar o objeto coloquei uma chave no mesmo que terá um valor de el 
+        'el' pegará o elemento atráves do DOM para que possamos manipular ele atráves do Vue.js;
+        para que possamos chamar o elemento que queremos manipular: atribuimos no mesmo um id e
+        e com à sintaxe do Vue.js que é '#id' podemos enfim chamar... 
+            A chave data tem a responsabilidade de ter dentro da mesma variáveis que possamos 
+        utilizar ao longo da manipulação do Modelo do Objeto.  
+        */
+         new Vue({
+            el: '#app',
+            data: {
+                title: 'sex 2 confirmed by ned nelson - the ceo of sex.'
+            }
+        })
+    </script>
+</body>
+</html>
